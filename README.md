@@ -16,6 +16,6 @@
     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
     . ~/.nvm/nvm.sh
     nvm install 8.11.2
-      필요하면 (nvm install --lts)
+    nvm install --lts
       
     yum install nginx
