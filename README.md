@@ -28,3 +28,8 @@
 ### 4. 스프링부트 서비스 등록
     sudo ln -s /var/myapp/myapp.jar /etc/init.d/myapp
     service myapp start
+
+### 5. Nginx 설정해볼까
+     location /api {
+         proxy_pass   http://127.0.0.1:8080;
+     }
