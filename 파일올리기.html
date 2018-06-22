@@ -1,0 +1,70 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+</head>
+<body>
+
+<ol>
+    <li><a href="https://www.ablesquare.co.kr/api/testPage" target="_blank">키 가지러</a> 간다.</li>
+    <li>로그인한다.</li>
+    <li>업로드 메타정보 받기 API (보이스말고) 선택해서 GET</li>
+    <li>리스폰스에 뜬거 넣는다 아래 텍스트창에</li>
+    <li>파일넣는다 업로드</li>
+</ol>
+
+
+<h1>키값여기 넣어라(복붙)</h1>
+<textarea style="width:100%;height:300px">
+</textarea>
+
+<form method="post" enctype="multipart/form-data">
+    <input type="hidden" name="key"/>
+    <input type="hidden" name="acl"/>
+    <!--<input type="hidden" name="uploadImagePath"/>-->
+    <input type="hidden" name="x-amz-meta-uuid"/>
+    <input type="hidden" name="X-Amz-Algorithm"/>
+    <input type="hidden" name="Content-Type"/>
+    <input type="hidden" name="X-Amz-Date"/>
+    <input type="hidden" name="Policy"/>
+    <input type="hidden" name="X-Amz-Signature"/>
+    <input type="hidden" name="X-Amz-Credential"/>
+    <input type="file" name="file"/> <br/>
+    <!-- The elements after this will be ignored -->
+    <input type="submit" style="display: none" name="submit" value="Upload to Amazon S3"/>
+</form>
+<a style="display:none"></a>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+        crossorigin="anonymous"></script>
+<script>
+    $('textarea').on('keypress keydown change paste', function () {
+        setTimeout(change, 100);
+    });
+    var url = '';
+
+    var submit = $('[name=submit]');
+    submit.on('click', function () {
+        submit.hide();
+        var a = $('a').show();
+        a.attr('href', url);
+        a.text(url);
+        a.show();
+    });
+
+    function change() {
+        var data = JSON.parse($('textarea').val());
+        Object.keys(data).forEach(function (key) {
+            set(key, data[key]);
+        });
+        var host = 'https://' + data.Host;
+        $('form').attr('action', host);
+        $('[name=submit]').show();
+        url = host + "/" + data['key'];
+    }
+
+    function set(name, value) {
+        $('[name=' + name + ']').val(value);
+    }
+</script>
+</html>
