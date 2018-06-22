@@ -33,3 +33,9 @@
      location /api {
          proxy_pass   http://127.0.0.1:8080;
      }
+
+### 6. 시간 설정
+    sudo rm /etc/localtime
+    sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+
+
