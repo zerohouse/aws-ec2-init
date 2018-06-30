@@ -24,6 +24,7 @@
       
 ### 3. 엔진엑스 깔고
     yum install nginx
+    amazon-linux-extras install nginx1.12
 
 ### 4. 스프링부트 서비스 등록
     sudo ln -s /var/myapp/myapp.jar /etc/init.d/myapp
