@@ -77,10 +77,11 @@
             proxy_set_header   X-Forwarded-Proto $scheme;
 
 
-### 9. gradle
-    wget https://services.gradle.org/distributions/gradle-4.10.2-bin.zip
-    sudo mkdir /opt/gradle
-    sudo unzip -d /opt/gradle gradle-4.10.2-bin.zip
-    export PATH=$PATH:/opt/gradle/gradle-4.10.2/bin
-    gradle -v
-
+### 9. 그래들 서비스 레지스트레이션시 
+    chmod 500 [name].jar
+    
+    +build.gralde내에 아래 내용 추가
+    
+    bootJar {
+     launchScript()
+    }
