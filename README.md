@@ -75,3 +75,12 @@
             proxy_set_header   X-Real-IP         $remote_addr;
             proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
             proxy_set_header   X-Forwarded-Proto $scheme;
+
+
+### 9. gradle
+    wget https://services.gradle.org/distributions/gradle-4.10.2-bin.zip
+    sudo mkdir /opt/gradle
+    sudo unzip -d /opt/gradle gradle-4.10.2-bin.zip
+    export PATH=$PATH:/opt/gradle/gradle-4.10.2/bin
+    gradle -v
+
