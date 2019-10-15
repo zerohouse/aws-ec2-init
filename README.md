@@ -85,3 +85,12 @@
     bootJar {
      launchScript()
     }
+
+
+
+## 10 이미지 서버
+
+  https://drive.google.com/file/d/1bwvoHU72rgYdLbTS42gKVXo73AQzMUh1/view?usp=sharing
+  https://aws.amazon.com/ko/blogs/compute/resize-images-on-the-fly-with-amazon-s3-aws-lambda-and-amazon-api-gateway/
+  
+
