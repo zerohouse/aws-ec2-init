@@ -1,3 +1,7 @@
+sudo yum install nginx
+sudo dnf install java-17-amazon-corretto-devel
+
+
 ### aws-ec2-init
 
 
